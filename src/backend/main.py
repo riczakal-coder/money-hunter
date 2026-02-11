@@ -12,6 +12,7 @@ from contextlib import asynccontextmanager
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from sqlalchemy import text
 
@@ -93,6 +94,18 @@ app = FastAPI(
         "- 🔥 **Catch Deal** — 초특가 핫딜 헌팅"
     ),
     lifespan=lifespan,
+)
+
+
+# ── CORS 설정 (프론트엔드 통신 허용) ──────────────────────
+# 개발 편의를 위해 모든 출처(origin)를 허용합니다.
+# 추후 배포 시 보안을 위해 특정 도메인으로 제한하는 것을 권장합니다.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 모든 도메인 허용
+    allow_credentials=True,
+    allow_methods=["*"],  # GET, POST, PUT, DELETE 등 모든 메서드 허용
+    allow_headers=["*"],  # 모든 헤더 허용
 )
 
 
