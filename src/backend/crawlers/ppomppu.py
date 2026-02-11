@@ -33,10 +33,10 @@ _BACKEND_DIR = str(Path(__file__).resolve().parent.parent)
 if _BACKEND_DIR not in sys.path:
     sys.path.insert(0, _BACKEND_DIR)
 
-from config import settings                          # noqa: E402
-from database import SessionLocal                    # noqa: E402
-from models import Deal                              # noqa: E402
-from notifier import (                               # noqa: E402
+from src.backend.config import settings
+from src.backend.database import SessionLocal
+from src.backend.models import Deal
+from src.backend.notifier import (
     format_deal_message,
     get_smart_tags,
     send_message_sync,
