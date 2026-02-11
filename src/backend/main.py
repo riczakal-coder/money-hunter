@@ -16,11 +16,12 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import text
 
 from src.backend.config import settings
-from crawlers.fmkorea import crawl_fmkorea
-from crawlers.ppomppu import crawl_ppomppu
-from database import AsyncSessionLocal, Base, engine
-from routers import bottle, deal
-import models  # noqa: F401 — Base.metadata에 모델 등록용
+from src.backend.crawlers.fmkorea import crawl_fmkorea
+from src.backend.crawlers.ppomppu import crawl_ppomppu
+from src.backend.database import AsyncSessionLocal, Base, engine
+from src.backend.routers import bottle, deal
+
+from src.backend import models  # noqa: F401 — Base.metadata에 모델 등록용
 
 # ── 로깅 설정 ─────────────────────────────────────────────
 logging.basicConfig(
