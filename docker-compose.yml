@@ -9,6 +9,9 @@ services:
     restart: always
     environment:
       - TZ=Asia/Seoul
+      - DB_HOST=host.docker.internal # 컨테이너에서 호스트 DB 접근
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     env_file:
       - .env
     volumes:
