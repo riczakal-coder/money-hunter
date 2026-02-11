@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic-settings
+asyncpg
+psycopg2-binary
+httpx
+beautifulsoup4
+apscheduler
+python-dotenv
+tzdata
+tzlocal

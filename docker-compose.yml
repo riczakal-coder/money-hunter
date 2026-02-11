@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  moneyhunter-backend:
+    build: .
+    container_name: moneyhunter-backend
+    ports:
+      - "8000:8000"
+    restart: always
+    environment:
+      - TZ=Asia/Seoul
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs

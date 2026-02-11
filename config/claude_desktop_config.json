@@ -1,0 +1,10 @@
+{
+    "mcpServers": {
+        "Stitch": {
+            "command": "python",
+            "args": [
+                "D:\\개인문서\\CEO\\money_hunter\\stitch\\stitch_server.py"
+            ]
+        }
+    }
+}
