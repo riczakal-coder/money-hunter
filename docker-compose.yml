@@ -14,5 +14,15 @@ services:
       - "host.docker.internal:host-gateway"
     env_file:
       - src/backend/.env
-    volumes:
       - ./logs:/app/logs
+
+  moneyhunter-frontend:
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile
+    container_name: moneyhunter-dashboard
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - moneyhunter-backend
