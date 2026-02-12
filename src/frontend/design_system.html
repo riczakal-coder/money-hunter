@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Hunter Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Noto+Sans+KR:wght@400;700&display=swap');
+        
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        .font-brand { font-family: 'Outfit', sans-serif; }
+        
+        /* Custom Keyframes for Scanning Effect */
+        @keyframes scan-line {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .animate-scan {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #FF4500;
+            box-shadow: 0 0 10px #FF4500;
+            animation: scan-line 2s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white p-10 space-y-20">
+
+    <!-- Section 1: Brand Identity & Logo -->
+    <section>
+        <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-6">01. Brand Identity</h2>
+        
+        <!-- Money Hunter Logo Component -->
+        <div class="inline-flex items-center gap-3 px-6 py-3 bg-black/40 border border-slate-700 rounded-full backdrop-blur-md">
+            <!-- Icon -->
+            <div class="relative w-8 h-8 flex items-center justify-center bg-slate-800 rounded-full overflow-hidden border border-slate-600">
+                <span class="text-lg">💸</span>
+                <div class="animate-scan"></div> <!-- Scanning Anim -->
+            </div>
+            <!-- Text -->
+            <div class="flex flex-col">
+                <h1 class="font-brand text-xl font-black tracking-tighter text-white leading-none">
+                    MONEY <span class="text-[#FF4500]">HUNTER</span>
+                </h1>
+                <span class="text-[10px] text-slate-400 font-mono tracking-widest">v0.1.0 SYSTEM ONLINE</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 2: Catch Deal Card (Vivid Red Theme) -->
+    <section>
+        <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-6">02. Catch Deal Card (Speed & Urgency)</h2>
+        
+        <!-- Deal Card Component -->
+        <div class="max-w-md bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-[#FF4500] hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] transition-all duration-300 group cursor-pointer relative">
+            <!-- Site Badge -->
+            <div class="absolute top-4 left-4 z-10">
+                <span class="px-2 py-1 bg-black/60 backdrop-blur text-[10px] text-white font-bold rounded border border-slate-600 group-hover:border-[#FF4500] group-hover:text-[#FF4500] transition-colors">
+                    PPOMPPU
+                </span>
+            </div>
+            
+            <!-- Tags -->
+            <div class="absolute top-4 right-4 z-10 flex gap-1">
+                <span class="px-2 py-1 bg-[#FF4500] text-white text-[10px] font-bold rounded shadow-lg animate-pulse">
+                    🔥 대박
+                </span>
+                <span class="px-2 py-1 bg-pink-600 text-white text-[10px] font-bold rounded shadow-lg">
+                    ❤️ 관심
+                </span>
+            </div>
+
+            <!-- Image Area (Placeholder) -->
+            <div class="h-40 bg-slate-700 flex items-center justify-center relative overflow-hidden">
+                <span class="text-4xl opacity-20">🖼️</span>
+                <!-- Hover Effect Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-5">
+                <h3 class="text-lg font-bold text-slate-100 group-hover:text-[#FF4500] transition-colors line-clamp-2 leading-snug mb-2">
+                    [역대급] 삼성 오디세이 G9 게이밍 모니터 49인치 초특가 (100만원 대 깨짐)
+                </h3>
+                <div class="flex items-end justify-between mt-4">
+                    <div class="flex flex-col">
+                        <span class="text-xs text-slate-400 line-through">1,200,000원</span>
+                        <span class="text-2xl font-black text-[#FF4500] font-brand">990,000<span class="text-base text-slate-300 font-normal ml-1">원</span></span>
+                    </div>
+                    <button class="px-4 py-2 bg-[#FF4500] hover:bg-[#ff571a] text-white text-xs font-bold rounded flex items-center gap-1 transition-colors shadow-lg shadow-orange-900/50">
+                        GO HUNTER 🚀
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Real-time Scan Line (Bottom) -->
+            <div class="h-0.5 w-full bg-slate-700 overflow-hidden">
+                <div class="h-full bg-[#FF4500] w-1/3 animate-[loading_2s_ease-in-out_infinite]"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section 3: Catch Bottle Card (Luxury Gold Theme) -->
+    <section>
+        <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-6">03. Catch Bottle Card (Luxury & Premium)</h2>
+
+        <!-- Bottle Card Component -->
+        <div class="max-w-md bg-black rounded-xl border border-slate-800 hover:border-[#D4AF37] transition-all duration-500 relative group">
+            <!-- Glow Effect -->
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-[#D4AF37] to-[#7a6020] rounded-xl opacity-20 group-hover:opacity-60 blur transition duration-500"></div>
+            
+            <div class="relative bg-[#0a0a0a] rounded-xl p-5 flex items-center gap-5">
+                <!-- Bottle Image Area -->
+                <div class="w-16 h-24 bg-slate-900 rounded-lg border border-slate-800 flex items-center justify-center shrink-0 shadow-inner">
+                    <span class="text-2xl">🥃</span>
+                </div>
+
+                <!-- Info -->
+                <div class="flex-1 min-w-0">
+                    <div class="flex justify-between items-start mb-1">
+                        <span class="text-[10px] text-[#D4AF37] font-bold tracking-widest border border-[#D4AF37]/30 px-1.5 py-0.5 rounded">CU 편의점</span>
+                        <span class="text-[10px] text-green-400 font-bold flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></span> 재고 있음
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white font-brand truncate tracking-tight">MACALLAN 12Y SHERRY</h3>
+                    <p class="text-xs text-slate-500 mt-1">강남구 역삼동 123-45 점포 외 3곳</p>
+                </div>
+
+                <!-- Action -->
+                <button class="w-10 h-10 rounded-full bg-[#D4AF37] text-black flex items-center justify-center hover:bg-white transition-colors shadow-[0_0_15px_#D4AF37]">
+                    ➤
+                </button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

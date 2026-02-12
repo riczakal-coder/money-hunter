@@ -27,10 +27,22 @@ async def deal_root():
 
 
 # ── 추후 확장용 엔드포인트 예시 ───────────────────────────
+from sqlalchemy import select
+from src.backend.database import AsyncSessionLocal
+from src.backend.models import Deal
+
+
+# ── 최신 핫딜 목록 조회 (DB 연동) ─────────────────────────
 @router.get("/latest")
-async def latest_deals():
-    """최신 핫딜 목록 조회 (TODO: 크롤러 연동)."""
-    return {
-        "message": "아직 수집된 딜이 없습니다. 크롤러가 곧 가동됩니다!",
-        "deals": [],
-    }
+async def latest_deals(limit: int = 20):
+    """최신 핫딜 목록을 조회합니다. (기본 20개)"""
+    async with AsyncSessionLocal() as session:
+        # 최신순 (id DESC) 정렬
+        stmt = select(Deal).order_by(Deal.id.desc()).limit(limit)
+        result = await session.execute(stmt)
+        deals = result.scalars().all()
+        
+        return {
+            "count": len(deals),
+            "deals": deals,
+        }

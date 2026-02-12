@@ -54,22 +54,27 @@ BASE_URL = "https://www.fmkorea.com"
 SITE_NAME = "fmkorea"
 
 # 펨코는 봇 차단이 심하므로 리얼한 브라우저 헤더 필수
+# 펨코는 봇 차단이 심하므로 리얼한 브라우저 헤더 필수
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/131.0.0.0 Safari/537.36"
+        "Chrome/120.0.0.0 Safari/537.36"
     ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "Accept-Encoding": "gzip, deflate, br",
     "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
-    "Sec-Ch-Ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+    "Cache-Control": "max-age=0",
+    "Connection": "keep-alive",
+    "Referer": "https://www.fmkorea.com/",
+    "Sec-Ch-Ua": '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
     "Sec-Ch-Ua-Mobile": "?0",
     "Sec-Ch-Ua-Platform": '"Windows"',
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
     "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1",
     "Upgrade-Insecure-Requests": "1",
-    "Referer": "https://www.fmkorea.com/",
 }
 
 
